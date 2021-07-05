@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To DO</title>
+    <style>
+        .checkbox{
+            width: 30px;
+            height: 30px;
+        }
+        .container{
+            padding: 2rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 2rem;
+            background-color: hsl(300, 45%, 83%);
+        }
+        .remove{
+            width: 60px;
+            height: 30px;
+        }
+        .container1{
+            padding: 2rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 2rem;
+            background-color: hsl(86, 58%, 70%);
+        }
+
+    </style>
+    <script  src="script.js" defer></script>
+</head>
+<body>
+    <form action="index.html" name="taskform" class = "container" method="GET" autocomplete="off">
+        <h1 for="">Add Task</h1>
+        <table>
+            <tr >
+                <td>Name the Task</td>
+                <td><input name="name" type="text" size =100 placeholder="Enter task title" ></td>
+            </tr>
+            <tr>
+                <td>Description of the Task</td>
+                <td><textarea name="desc" id="" cols=90 rows=5 placeholder="Enter details" ></textarea></td>
+            </tr>
+            <tr>
+                <td>DeadLine Date of the Task</td>
+                <td><input name="date" type="date" ></td>
+            </tr>
+
+        </table><br><br>
+        <button  type="submit"  ><h1>Add Task</h1></button>    
+        
+
+    </form>
+    <hr>
+    <div class = "container1">
+        <h1>TO DO</h1>
+        <table border="1" cellspacing="1" cellpadding='10'  >
+            <tbody class="table1">
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>DeadLine</th>
+            </tr> 
+            </tbody>
+        </table>
+        <br><br><br>
+        <button type="submit" id="remove" onclick="remove()" ><h1>Remove Completed task</h1></button>   
+    </div>
+</body>
+
+</html>
+
+
