@@ -8,7 +8,7 @@ new URLSearchParams(window.location.search).forEach((value,name)=>{
 // window.location.replace('http://127.0.0.1:5500/');
 
 if(result[0] != undefined && result[0].length != 0 )
-{localStorage.setItem(result[0], result)}
+{localStorage.setItem(result[0].split(' ').join(''), result)}
 
 const table = document.querySelector(".table1")
 
@@ -19,7 +19,7 @@ const literal = (result) =>{
     return `
     
     <td>
-        <input type="checkbox" id= ${result[0]} class= "checkbox">
+        <input type="checkbox" id= ${result[0].split(' ').join('')} class= "checkbox">
     </td>
     <td>
         ${result[0]}
@@ -37,7 +37,7 @@ keys.forEach((item)=>{
     temp = localStorage.getItem(item).split(',')
     if(item.length != 0){
     tr = document.createElement('tr')
-    tr.id = item
+    tr.id = item.split(' ').join('')
     tr.innerHTML  = literal(temp)
     table.appendChild(tr)}
 })
@@ -45,16 +45,15 @@ keys.forEach((item)=>{
 
 
 function remove(){
-    console.log('inside remove1')
     document.querySelectorAll('.checkbox').forEach((checker)=>{
         if(checker.checked === true){
             localStorage.removeItem(checker.id)
             console.log(checker.id)
-            console.log('inside remove2')
 
         }
     })
-    console.log('inside remove3')
     window.location.replace('https://ankit5054.github.io/TODO/');
+    // window.location.replace('http://127.0.0.1:5500/');
+    // http://127.0.0.1:5500/
 
 }
